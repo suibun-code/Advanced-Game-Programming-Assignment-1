@@ -27,12 +27,22 @@ public class Cell : MonoBehaviour
     {
         if (Manager.instance.playMode == PlayMode.Scan)
         {
+            if (Manager.instance.remainingScans == 0)
+                return;
+
+            Manager.instance.Scanned();
+
             if (grid != null)
                 grid.ScanCellClicked(this);
         }
 
         else if (Manager.instance.playMode == PlayMode.Extract)
         {
+            Manager.instance.Extracted();
+
+            if (Manager.instance.remainingExtracts == 0)
+                return;
+
             if (grid != null)
                 grid.ExtractCellClicked(this);
         }

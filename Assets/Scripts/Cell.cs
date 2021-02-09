@@ -38,6 +38,12 @@ public class Cell : MonoBehaviour
 
         else if (Manager.instance.playMode == PlayMode.Extract)
         {
+            if (Manager.instance.remainingExtracts == 1)
+            {
+                grid.ExtractCellClicked(this);
+                Manager.instance.Extracted();
+            }
+
             Manager.instance.Extracted();
 
             if (Manager.instance.remainingExtracts == 0)

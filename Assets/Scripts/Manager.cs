@@ -14,8 +14,8 @@ public class Manager : Singleton<Manager>
 {
     public PlayMode playMode = PlayMode.Scan;
 
-    public int remainingScans = 8;
-    public int remainingExtracts = 3;
+    public int remainingScans = 12;
+    public int remainingExtracts = 6;
 
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI modeText;
